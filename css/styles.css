@@ -1,0 +1,298 @@
+:root {
+  --bg: #ffffff;
+  --fg: #0f1724;
+  --muted: #6b7280;
+  --accent: #2563eb;
+  --surface: #f8fafc;
+  --card: #ffffff;
+  --glass: rgba(255, 255, 255, 0.6);
+}
+:root[data-theme="dark"] {
+  --bg: #0b1220;
+  --fg: #e6eef8;
+  --muted: #9aa6b2;
+  --accent: #60a5fa;
+  --surface: #071021;
+  --card: #071021;
+  --glass: rgba(255, 255, 255, 0.04);
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: Inter, Segoe UI, Roboto, system-ui, -apple-system,
+  "Helvetica Neue", Arial;
+  line-height: 1.5;
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), var(--surface));
+  color: var(--fg);
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  background: transparent;
+  backdrop-filter: blur(6px);
+  z-index: 40;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--fg);
+  font-size: 1.1rem;
+}
+.brand img { /*imagen en el navbar */
+  position: absolute; /* PASO CLAVE 2: Mover independientemente */
+  bottom: -0px;
+  right: 1160px;
+  width: 60px; /* Ajusta el tamaño del contenedor del logo si es necesario */
+  border-radius: 50px;
+}
+.nav {
+  margin-left: auto;
+  display: flex;
+  gap: 1rem;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.menu-toggle {
+  display: none;
+}
+#theme-toggle {
+  background: transparent;
+  border: 0;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.hero {
+  padding: 4rem 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2rem;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+}
+/* 1. ESTILO PARA EL CONTENEDOR DE LA IMAGEN */
+.hero-avatar {
+  position: relative; /* ¡CLAVE! Esto hace que los elementos con 'position: absolute;' dentro de él se posicionen con respecto a este div. */
+  display: inline-block; /* Opcional: Ajusta el ancho del div al de la imagen si no tiene otro ancho definido */
+  /* Otros estilos que ya tengas para hero-avatar (margen, tamaño, etc.) */
+}
+
+/* 2. ESTILO PARA LA IMAGEN (Asegurarse que se ajuste bien) */
+.hero-avatar img {
+  max-width: 100%; /* Asegura que la imagen no se desborde */
+  height: auto;    /* Mantiene la proporción */
+  display: block;  /* Elimina el espacio extra debajo de las imágenes */
+}
+
+/* 3. ESTILO PARA EL TEXTO FLOTANTE */
+.texto-logo {
+  position: absolute; /* ¡CLAVE! Saca el texto del flujo normal y lo posiciona sobre la imagen. */
+  
+  /* Define la posición del texto. Puedes usar top, bottom, left, right: */
+  top: 90%;         /* Posiciona el texto verticalmente en el centro */
+  left: 43%;        /* Posiciona el texto horizontalmente en el centro */
+  transform: translate(-50%, -50%); /* Ajusta el texto para que su PROPIO centro coincida con el 50%/50% */
+  
+  color: white;         /* Color del texto (ajusta para que sea visible) */
+  padding: 5px 10px;    /* Relleno alrededor del texto */
+  font-size: 1.2em;     /* Tamaño del texto */
+  font-weight: bold;    /* Negrita */
+  text-align: center;   /* Centra el texto si ocupa varias líneas */
+  white-space: nowrap;  /* Evita que el texto se rompa en varias líneas */
+  border-radius: 5px;   /* Bordes redondeados */
+}
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btn.ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+.btn.small {
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.project-card {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+}
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.skill-list li {
+  background: var(--surface);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  color: var(--muted);
+}
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 600px;
+}
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+input,
+textarea {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 23, 36, 0.06);
+  background: var(--card);
+  color: var(--fg);
+}
+.site-footer {
+  padding: 2rem 0;
+  color: var(--muted);
+}
+.site-footer img {
+  height: 10px;
+  border-radius: 30px;
+}
+.hero-avatar img {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 12px;
+}
+.site-footer {
+  /* (Asegura que tenga una altura si es necesario) */
+  min-height: 200px;
+  background-color: #071021; /* Ejemplo de fondo */
+}
+
+.container {
+  position: relative; /* PASO CLAVE 1: Define el área de movimiento */
+  width: 90%; /* Ejemplo de ancho */
+  margin: 0 auto; /* Centrar el contenedor */
+  /* Otros estilos del contenedor... */
+}
+
+/* Estilo para el Primer Texto (Esquina Superior Izquierda) */
+.texto-derechos {
+  position: absolute; /* PASO CLAVE 2: Mover independientemente */
+  top: 40px; /* 2025 todos los derechos reservados */
+  left: 300px;
+}
+.texto-Diseño {
+  /* Diseño y Desarrollo por Sergio Romero */
+  position: absolute; /* Esto hace que el span ocupe una línea completa */
+  top: 90px; /* Opcional: añade una pequeña separación */
+  left: 320px;
+  font-size: 0.9em; /* Opcional: haz el texto un poco más pequeño */
+}
+
+/* Estilo para el Segundo Texto (Centro o Abajo) */
+.texto-nombre {
+  position: absolute; /* PASO CLAVE 2: Mover independientemente */
+  top: 40px; /* 2025 sergio romero */
+  left: 83%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+}
+
+/* Estilo para el Contenedor del Logo (Esquina Inferior Derecha) */
+.logo-footer-contenedor {
+  position: absolute; /* PASO CLAVE 2: Mover independientemente */
+  bottom: -50px;
+  right: 1000px;
+  width: 100px; /* Ajusta el tamaño del contenedor del logo si es necesario */
+}
+
+/* Estilo para la imagen dentro del contenedor (asegura que se ajuste) */
+.logo-footer-contenedor img {
+  max-width: 100%;
+  height: auto;
+}
+/* Estilo del botón */
+#btnScrollArriba {
+  display: none; /* Inicia oculto */
+  position: fixed; /* Mantiene el botón flotando en la pantalla */
+  bottom: 30px; /* Distancia desde el borde inferior */
+  right: 30px; /* Distancia desde el borde derecho */
+  z-index: 999; /* Asegura que esté por encima de otros elementos */
+    
+   /* Estilos visuales */
+  border: none;
+  outline: none;
+  background-color: #007bff; /* Color de fondo (ejemplo: azul) */
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%; /* Lo hace circular */
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s; /* Transición suave para el color */
+}
+
+/* Efecto al pasar el ratón */
+#btnScrollArriba:hover {
+    background-color: #0056b3; 
+}
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: inline-block;
+    margin-left: auto;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero-text h1 {
+    transition: transform 0.45s ease, opacity 0.45s;
+  }
+  body.loaded .hero-text h1 {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* small accessibility focus */
+:focus {
+  outline: 3px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}

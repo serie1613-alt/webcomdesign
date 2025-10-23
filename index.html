@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mi Portafolio — web</title>
+    <meta
+      name="description"
+      content="Portafolio profesional de Tu Nombre — desarrollador/a web, diseñador/a, etc."
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="#"><img src="img/logo-02.png" alt="Logo" /></a>
+        <nav class="nav" id="main-nav">
+          <a href="#about">Sobre mí</a>
+          <a href="#projects">Proyectos</a>
+          <a href="#skills">Habilidades</a>
+          <a href="#contact">Contacto</a>
+        </nav>
+        <button id="theme-toggle" aria-label="Cambiar tema">🌙</button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Menú">
+          ☰
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>Hola, Soy Sergio Romero </h1>
+            <p>
+              Soy un Diseñador y Creador de Sitios Web
+              digitales accesibles y escalables.
+            </p>
+            <p class="cta-row">
+              <a class="btn" href="#contact">Trabajemos juntos</a>
+              <a class="btn ghost" href="#projects">Ver proyectos</a>
+            </p>
+          </div>
+          <div class="hero-avatar">
+            <img src="img/logo-01.png" alt="sergio romero" />
+            <span class="texto-logo">Sergio Romero</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="about container" id="about">
+        <h2>Sobre mí</h2>
+        <p>
+          Soy un profesional con experiencia en desarrollo front-end, diseño de
+          interfaces y accesibilidad. Me encanta resolver problemas y aprender
+          nuevas tecnologías.
+        </p>
+      </section>
+
+      <section class="projects container" id="projects">
+        <h2>Proyectos</h2>
+        <div class="grid projects-grid">
+          <article class="project-card">
+            <h3>Proyecto 1</h3>
+            <p>Breve descripción del proyecto. Tecnologías: HTML, CSS, JS.</p>
+            <p><a href="#" class="btn small">Ver proyecto</a></p>
+          </article>
+          <article class="project-card">
+            <h3>Proyecto 2</h3>
+            <p>Breve descripción del proyecto. Tecnologías: React, Node.js.</p>
+            <p><a href="#" class="btn small">Ver proyecto</a></p>
+          </article>
+          <article class="project-card">
+            <h3>Proyecto 3</h3>
+            <p>Breve descripción del proyecto. Tecnologías: Python, Flask.</p>
+            <p><a href="#" class="btn small">Ver proyecto</a></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills container" id="skills">
+        <h2>Habilidades</h2>
+        <ul class="skill-list">
+          <li>HTML &amp; CSS</li>
+          <li>JavaScript (ES6+)</li>
+          <li>React</li>
+          <li>Node.js</li>
+          <li>Accesibilidad (a11y)</li>
+        </ul>
+      </section>
+
+      <section class="contact container" id="contact">
+    <h2>Contacto</h2>
+    <p>¿Quieres trabajar conmigo? Llena el formulario:</p>
+    
+    <form action="https://formspree.io/f/xanpgvao" method="POST" novalidate>
+    
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Correo</label>
+        <input type="email" id="email" name="_replyto" required /> 
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Enviar</button>
+    </form>
+    <p class="note">
+        O escríbeme a: <a href="mailto:serie1613@gmail.com">serie1613@gmail.com</a>
+    </p>
+</section>
+    </main>
+
+    <footer class="site-footer">
+    <div class="container">
+        <p class="texto-derechos">© <span class="year-span"></span> Todos los Derechos Reservados.</p>
+
+          <span class="texto-Diseño">Diseño y Creacion Por WebComDesign</span>
+        </p>
+        
+        <p class="texto-nombre">© <span class="year-span"></span> Sergio Romero.</p>
+        
+        <div class="logo-footer-contenedor"><img src="img/logo-02.png" alt="logo-footer"></div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.year-span').forEach(span => {
+        span.textContent = new Date().getFullYear();
+    });
+</script>
+
+    <script src="js/script.js"></script>
+    <button onclick="scrollToTop()" id="btnScrollArriba" title="Ir arriba">
+    ↑
+    </button>
+  </body>
+</html>
